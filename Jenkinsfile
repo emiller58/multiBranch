@@ -19,11 +19,9 @@ pipeline {
         }        
        
     } 
-    node("myAgent") {    
         post {         
            always {
                junit '**/target/surefire-reports/TEST-*.xml'
           }              
        }
-    }
 }
