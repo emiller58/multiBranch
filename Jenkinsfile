@@ -16,7 +16,14 @@ pipeline {
             steps {                
                     bat 'mvn test'                
             }
-        }        
+        }
+      
+        stage('Publish test results') {
+             steps {
+                junit '**/target/surefire-reports/TEST-*.xml'
+              }
+        } 
+      
        
     } 
 
